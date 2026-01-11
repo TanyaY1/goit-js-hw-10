@@ -1,9 +1,3 @@
-import flatpickr from "flatpickr";
-import "flatpickr/dist/flatpickr.min.css";
-
-import iziToast from "izitoast";
-import "izitoast/dist/css/iziToast.min.css";
-
 const startBtn = document.querySelector("[data-start]");
 const datePicker = document.querySelector("#datetime-picker");
 
@@ -15,11 +9,9 @@ const secondsEl = document.querySelector("[data-seconds]");
 let selectedDate = null;
 let timerId = null;
 
-
 function addLeadingZero(value) {
   return String(value).padStart(2, "0");
 }
-
 
 function convertMs(ms) {
   const second = 1000;
@@ -35,13 +27,11 @@ function convertMs(ms) {
   };
 }
 
-
 flatpickr(datePicker, {
   enableTime: true,
   time_24hr: true,
   defaultDate: new Date(),
   minuteIncrement: 1,
-
   onClose(selectedDates) {
     const now = new Date();
     const pickedDate = selectedDates[0];
@@ -61,7 +51,6 @@ flatpickr(datePicker, {
     }
   },
 });
-
 
 function updateTimer() {
   const now = new Date();
@@ -84,7 +73,7 @@ function updateTimer() {
 
   const { days, hours, minutes, seconds } = convertMs(ms);
 
-  daysEl.textContent = days; 
+  daysEl.textContent = addLeadingZero(days);
   hoursEl.textContent = addLeadingZero(hours);
   minutesEl.textContent = addLeadingZero(minutes);
   secondsEl.textContent = addLeadingZero(seconds);

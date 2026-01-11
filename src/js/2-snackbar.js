@@ -1,6 +1,5 @@
 const form = document.querySelector(".form");
 
-
 function createPromise(delay, state) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -12,7 +11,6 @@ function createPromise(delay, state) {
     }, delay);
   });
 }
-
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
