@@ -18,14 +18,26 @@
   <main>
     <div class="container">
       <a class="back-link" href="./index.html">Go back</a>
-      <h1 class="main-title">Snackbar Example</h1>
+      <h1 class="main-title">Snackbar</h1>
 
-      <div class="buttons">
-        <button id="success-btn">Show Success</button>
-        <button id="error-btn">Show Error</button>
-        <button id="info-btn">Show Info</button>
-        <button id="warning-btn">Show Warning</button>
-      </div>
+      <form class="form">
+        <label>
+          Delay (ms)
+          <input type="number" name="delay" required placeholder="Enter delay in ms" />
+        </label>
+
+        <fieldset>
+          <legend>State</legend>
+          <label>
+            <input type="radio" name="state" value="fulfilled" required /> Fulfilled
+          </label>
+          <label>
+            <input type="radio" name="state" value="rejected" required /> Rejected
+          </label>
+        </fieldset>
+
+        <button type="submit">Create notification</button>
+      </form>
     </div>
   </main>
 
