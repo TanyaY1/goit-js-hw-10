@@ -13,3 +13,101 @@
 /* Sections style */
 @import url('./header.css');
 @import url('./back-link.css');
+
+
+.timer {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.value {
+  font-size: 48px;
+  font-weight: 600;
+}
+
+.label {
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+
+
+form.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+
+form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+form input[type="number"] {
+  margin-top: 5px;
+  padding: 8px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+form input[type="number"]:focus {
+  border-color: #007bff;
+}
+
+fieldset {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 10px 15px;
+}
+
+fieldset legend {
+  font-weight: bold;
+}
+
+fieldset label {
+  display: flex;
+  align-items: center;
+  font-weight: normal;
+  margin-top: 5px;
+}
+
+fieldset input[type="radio"] {
+  margin-right: 10px;
+}
+
+
+form button[type="submit"] {
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+form button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.iziToast {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
