@@ -1,3 +1,10 @@
+import 'flatpickr/dist/flatpickr.min.css';
+import 'izitoast/dist/css/iziToast.min.css';
+
+
+import flatpickr from 'flatpickr';
+import iziToast from 'izitoast';
+
 const startBtn = document.querySelector("[data-start]");
 const datePicker = document.querySelector("#datetime-picker");
 
@@ -68,6 +75,12 @@ function updateTimer() {
     startBtn.disabled = true;
     selectedDate = null;
 
+    iziToast.info({
+      title: "Timer finished",
+      message: "The countdown has ended!",
+      position: "topRight",
+    });
+
     return;
   }
 
@@ -80,9 +93,17 @@ function updateTimer() {
 }
 
 startBtn.addEventListener("click", () => {
+  if (!selectedDate) return;
+
   startBtn.disabled = true;
   datePicker.disabled = true;
 
   updateTimer();
   timerId = setInterval(updateTimer, 1000);
+
+  iziToast.success({
+    title: "Success",
+    message: "Timer started!",
+    position: "topRight",
+  });
 });
